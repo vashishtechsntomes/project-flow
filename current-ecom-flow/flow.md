@@ -113,7 +113,7 @@ flowchart TD
 ![alt text](<images/customer-flow.png>)
 
 
-## Seller onboarding flow
+## Seller onboarding flow (ecom panel)
 
 ```
 flowchart TD
@@ -135,7 +135,7 @@ flowchart TD
 ![alt text](images/seller-onboarding.png)
 
 
-## Routine Builder + Progress Tracker
+## Routine Builder + Progress Tracker (app)
 
 ```
 flowchart TD
@@ -202,7 +202,7 @@ flowchart TD
 ```
 ![alt text](<images/routine-builderProgress-Tracker.png>)
 
-##  Community module
+##  Community module(android app)
 It shows that Users and Doctors can both ask and reply, supports categories, description, and multiple images, and keeps everything flat (no subgraphs).
 
 ```
