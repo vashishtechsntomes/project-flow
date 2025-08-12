@@ -3,7 +3,7 @@
 This document provides the Mermaid source code for the **Workflow**.  
 <!-- Copy the code block into the editor at https://www.mermaidchart.com/ to visualize or modify the diagram. -->
 
-## How to Render
+## If you want to visualize diagram
 
 1. Navigate to https://www.mermaidchart.com/.  
 2. Paste the entire Mermaid block above into the left-hand code editor.  
