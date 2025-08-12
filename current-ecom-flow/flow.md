@@ -55,40 +55,21 @@ flowchart LR
 
 ```
 flowchart TD
-    A[Seller Panel]
-
-    %% Dashboard & Analytics
-    A --> AB[Dashboard]
-    AB --> AC[Product, Order and Sales Analytics]
-
-    %% Profile - Company & Brand (View Only)
-    A --> B[Profile]
-    B --> C[View Company Details]
-    B --> D[View Brand Details]
-    C --- D:::relation
-
-    %% Product Management
-    A --> F[Manage Products - Create/Edit/View]
-    F --> G[Assign Existing Category]
-    F --> H[Assign Existing Tags]
-    F --> I[Assign Existing Attributes]
-    F --> J[Set Discount]
-
-    %% Order Management
-    A --> Q[Manage Orders]
-    Q --> R[View/Update Order Status]
-
-    %% Payment Management
-    A --> S[View Payments]
-    S --> T[Track Payment Status]
-
-    %% Relationships
+    A["Seller Panel"] --> AB["Dashboard"] & B["Profile"] & F["Manage Products - Create/Edit/View"] & Q["Manage Orders"] & S["View Payments"]
+    AB --> AC["Product, Order and Sales Analytics"]
+    B --> C["View Company Details"] & D["View Brand Details"]
+    C --- D
+    F --> G["Assign Existing Category"] & H["Assign Existing Tags"] & I["Assign Existing Attributes"] & J["Set Discount"] & Q
+    Q --> R["View/Update Order Status"] & S
+    S --> T["Track Payment Status"]
     D --> F
-    F --> Q
-    Q --> S
 
-    %% Styles
+     B:::Ash
+     C:::Ash
+     D:::relation
+     D:::Ash
     classDef relation fill:none,stroke:#0275d8,stroke-width:1.5px,stroke-dasharray: 5 5
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
     style A fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
 
 ```
@@ -99,7 +80,7 @@ flowchart TD
 
 ```
 flowchart TD
-    A["Customer Panel"] --> B["Profile Management"] & F["Browse Products"] & W2["View Wishlist"] & P["Give Ratings and Reviews"] & RT["Routine Module"] & PT["Progress Tracker"] & CM["Community"]
+    A["Customer Panel"] --> B["Profile Management"] & F["Browse Products"] & W2["View Wishlist"] & P["Give Ratings and Reviews"] & RT["Routine Module"] & PT["Routine Progress Tracker(dairy)"] & CM["Community"]
     B --> C["View/Update Personal Details"] & D["Manage Addresses"] & E["View Order History"] & p1["View Wishlist"]
     F --> G["Filter by Category"] & H["Filter by Brand"] & I["Search by Tags/Attributes"] & J["View Product Details"]
     J --> K["View Ratings - from Doctors and Customers"] & W1["Add to Wishlist"] & L["Add to Cart"]
@@ -108,27 +89,28 @@ flowchart TD
     L --> M["Place Order"]
     M --> X1["Apply Coupon/Reward/Discount"] & N["Make Payment"]
     N --> O["Track Order Status"]
-    P --> Q["Rate Products"] & R["Rate Doctors"]
+    P --> Q["Rate Products"]
     RT --> S1["Step 1 - Define: name - description - benefits - time - visibility"]
     S1 --> S2["Step 2 - Add products by category - set pack size - expiry - expected benefits - days"]
     S2 --> S3["Step 3 - Reminders - choose routine - time"]
     S3 --> S4["Step 4 - Publish"]
     S4 --> RRule["Only one routine can be active"]
-    PT --> T1["Daily check-in - take photo"] & T2["Rate hydration - restorative - nourishing"] & T3["Report issues - add notes"] & T4["Mark steps done"]
+    PT --> T1["Daily check-in - take photo"]
     CM --> CQA["Ask Question - category - title - description - images"] & CBR["Browse/Search Questions"]
     CBR --> CRP["Reply - user or doctor"]
     CQA --> CIN["Like - Comment - Share"]
-    CRP --> CIN2["Like - Comment - Share"]
     X1 --> N
+    T1 --> T2["Rate hydration - restorative - nourishing"]
+    T2 --> T3["Report issues - add notes"]
+    T4["Mark steps done"] --> T3
+    CRP --> CIN
 
      RRule:::note
     classDef note fill:#fff7e6,stroke:#ff9900,stroke-width:1px,stroke-dasharray:5 5
-
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
 ```
+
 ![alt text](<customer-flow.png>)
-
-
-
 
 
 ## Seller onboarding flow
@@ -145,10 +127,12 @@ flowchart TD
     G -- Rejected --> I["Notify Seller & Request Corrections"]
     H --> J["Dashboard"]
 
+     I:::Ash
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
     style H fill:#e5ffe5,stroke:#5cb85c,stroke-width:1px
-    style I fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
     style J fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
 ```
+![alt text](<Mermaid Chart - Create complex, visual diagrams with text. A smarter way of creating diagrams.-2025-08-12-105026.png>)
 ![alt text](seller-onboarding.png)
 
 
@@ -217,8 +201,7 @@ flowchart TD
     style SAVE fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
 
 ```
-![alt text](<routine builderProgress-Tracker.png>)
-
+![alt text](<routine-builderProgress-Tracker.png>)
 
 ##  Community module
 It shows that Users and Doctors can both ask and reply, supports categories, description, and multiple images, and keeps everything flat (no subgraphs).
@@ -263,6 +246,7 @@ flowchart TD
     classDef note fill:#fff7e6,stroke:#ff9900,stroke-width:1px,stroke-dasharray:5 5;
     class RN note;
 ```
+
 ![alt text](<community-flow.png>)
 
 
