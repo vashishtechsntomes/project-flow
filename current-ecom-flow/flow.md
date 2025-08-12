@@ -48,7 +48,7 @@ flowchart LR
 
 ```
 
-![alt text](<admin-flow.png>)
+![alt text](<images/admin-flow.png>)
 
 
 ## Seller flow
@@ -73,7 +73,7 @@ flowchart TD
     style A fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
 
 ```
-![alt text](seller-flow.png)
+![alt text](images/seller-flow.png)
 
 
 ## Customer flow
@@ -110,7 +110,7 @@ flowchart TD
     classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
 ```
 
-![alt text](<customer-flow.png>)
+![alt text](<images/customer-flow.png>)
 
 
 ## Seller onboarding flow
@@ -132,8 +132,7 @@ flowchart TD
     style H fill:#e5ffe5,stroke:#5cb85c,stroke-width:1px
     style J fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
 ```
-![alt text](<Mermaid Chart - Create complex, visual diagrams with text. A smarter way of creating diagrams.-2025-08-12-105026.png>)
-![alt text](seller-onboarding.png)
+![alt text](images/seller-onboarding.png)
 
 
 ## Routine Builder + Progress Tracker
@@ -201,7 +200,7 @@ flowchart TD
     style SAVE fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
 
 ```
-![alt text](<routine-builderProgress-Tracker.png>)
+![alt text](<images/routine-builderProgress-Tracker.png>)
 
 ##  Community module
 It shows that Users and Doctors can both ask and reply, supports categories, description, and multiple images, and keeps everything flat (no subgraphs).
@@ -247,7 +246,7 @@ flowchart TD
     class RN note;
 ```
 
-![alt text](<community-flow.png>)
+![alt text](<images/community-flow.png>)
 
 
 
