@@ -33,10 +33,13 @@ flowchart LR
     D3 --> D2["Approve/Reject Doctor"]
 
      C1:::Ash
+     D1:::Ash
+     PMOD:::Ash
      B1:::Ash
      B2:::Ash
      U2:::Ash
      U3:::Ash
+     O1:::Ash
      PM2:::Ash
      PM3:::Ash
      PM4:::Ash
@@ -45,8 +48,11 @@ flowchart LR
     classDef note fill:#fff7e6,stroke:#ff9900,stroke-width:1px,stroke-dasharray:5 5
     classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
     style A fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
-    style D2 fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
     style S2 fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
+    style D2 fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
+
+
+
 ```
 ![alt text](<images/admin-flow.png>)
 

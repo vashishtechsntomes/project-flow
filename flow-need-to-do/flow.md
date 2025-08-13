@@ -6,17 +6,17 @@ flowchart TD
     direction TB
     CE[Company]
     CL[Company Location]
-    CP[Contact Person]
+    CP[Contact Person- brand admin]
     BR[Brand]
     PR[Product]
     U[User]
     UBP[User–Brand Permissions -product_listing, market_survey, brand_list, ...]
 
     CE -->|has many| CL
-    CE -->|has many| BR
+    CL -->|has many| BR
     BR -->|has many| PR
     CL -->|managed by| CP
-    CE -->|has many| U
+    CL -->|has many| U
     U --- UBP
     UBP --- BR
   end
