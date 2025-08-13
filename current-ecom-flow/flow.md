@@ -20,8 +20,8 @@ flowchart LR
     B1 --> B2["Assign Brand to Company - 1 Company to 1 Brand"]
     P0 --> P1["Assign Category"] & P2["Assign Tags"] & P3["Set Attributes"] & P4["Attach Discounts - Coupons/Rewards"]
     MD1 --> V1["Manage Categories - Create/Edit/View"] & V2["Manage Tags - Create/Edit/View"] & V3["Manage Attributes - Create/Edit/View"] & V4["Manage Discounts - Coupons and Rewards - Create/Edit/View"]
-    S1 --> S2["Approve/Reject Seller"] & S3["View Seller KYC/Documents"] & S4["Onboarding Form - Create Seller"]
-    D1 --> D2["Approve/Reject Doctor"] & D3["Verify Doctor"] & D4["Onboarding Form - Create Doctor"]
+    S1 --> S3["View Seller KYC/Documents"] & S4["Onboarding Form - Create Seller"]
+    D1 --> D3["Verify Doctor"] & D4["Onboarding Form - Create Doctor"]
     U1 --> U2["View Purchase History"] & U3["Handle Support/Refund Requests"]
     OMOD --> O1["View/Cancel Orders"] & O2["Update Order Status"] & O3["Validate Discounts during Checkout"] & PMOD
     PMOD --> PM1["View Payments"] & PM2["Track Payment Status"] & PM3["Issue Refunds and Adjustments"] & PM4["Reconciliation & Reports"]
@@ -29,6 +29,8 @@ flowchart LR
     V4 --> O3
     N1["Note: Company and Brand have a 1-to-1 relationship"] --- B2
     N2["Note: Discounts include coupons and rewards"] --- V4
+    S3 --> S2["Approve/Reject Seller"]
+    D3 --> D2["Approve/Reject Doctor"]
 
      C1:::Ash
      B1:::Ash
@@ -43,11 +45,9 @@ flowchart LR
     classDef note fill:#fff7e6,stroke:#ff9900,stroke-width:1px,stroke-dasharray:5 5
     classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
     style A fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
-    style S2 fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
     style D2 fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
-
+    style S2 fill:#ffe5e5,stroke:#d9534f,stroke-width:1px
 ```
-
 ![alt text](<images/admin-flow.png>)
 
 
