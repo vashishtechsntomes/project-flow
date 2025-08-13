@@ -82,38 +82,69 @@ flowchart TD
 ![alt text](images/seller-flow.png)
 
 
+
+## Seller flow(Admin panel UI)
+```
+flowchart TD
+    A["Seller Panel"] --> AB["Dashboard"]
+    AB --> AC["Product, Order and Sales Analytics"] & B["Profile"] & rectId["Manage brands"]
+    B --> C["View Company Details"]
+    F["Manage Products - Create/Edit/View"] --> G["Assign Existing Category"] & H["Assign Existing Tags"] & I["Assign Existing Attributes"] & J["Set Discount"]
+    Q["View Orders"] --> S["View Payments"]
+    rectId --> F
+    AC --> F & Q
+
+     B:::Ash
+     C:::Ash
+    classDef relation fill:none,stroke:#0275d8,stroke-width:1.5px,stroke-dasharray: 5 5
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
+    style A fill:#e5f1ff,stroke:#0275d8,stroke-width:1px
+```
+
+
 ## Customer flow
 
 ```
+---
+config:
+  layout: dagre
+---
 flowchart TD
     A["Customer Panel"] --> B["Profile Management"] & F["Browse Products"] & W2["View Wishlist"] & P["Give Ratings and Reviews"] & RT["Routine Module"] & PT["Routine Progress Tracker(dairy)"] & CM["Community"]
     B --> C["View/Update Personal Details"] & D["Manage Addresses"] & E["View Order History"] & p1["View Wishlist"]
-    F --> G["Filter by Category"] & H["Filter by Brand"] & I["Search by Tags/Attributes"] & J["View Product Details"]
-    J --> K["View Ratings - from Doctors and Customers"] & W1["Add to Wishlist"] & L["Add to Cart"]
+    F --> G["Filter by Category"] & H["Filter by Brand"] & I["Search by Tags/Attributes"] & J["View Product Details"] & n2["Filter by kits(toner, cleanser, etc)"]
+    J --> K["View Ratings - from Doctors and Customers"] & W1["Add to Wishlist"] & L["Add to Cart"] & n1["Label looker(analyse and compare product)"]
     W2 --> W3["Move to Cart"] & W4["Remove from Wishlist"]
     W3 --> L
     L --> M["Place Order"]
     M --> X1["Apply Coupon/Reward/Discount"] & N["Make Payment"]
     N --> O["Track Order Status"]
-    P --> Q["Rate Products"]
+    P --> Q["Rate Products After product purchased<br>User will rate 2 times after 7th day or 28th day"]
     RT --> S1["Step 1 - Define: name - description - benefits - time - visibility"]
     S1 --> S2["Step 2 - Add products by category - set pack size - expiry - expected benefits - days"]
     S2 --> S3["Step 3 - Reminders - choose routine - time"]
     S3 --> S4["Step 4 - Publish"]
     S4 --> RRule["Only one routine can be active"]
-    PT --> T1["Daily check-in - take photo"]
+    PT --> T1["Checkin daily(input - text, options)<br>Weekly upload photo"]
     CM --> CQA["Ask Question - category - title - description - images"] & CBR["Browse/Search Questions"]
     CBR --> CRP["Reply - user or doctor"]
     CQA --> CIN["Like - Comment - Share"]
     X1 --> N
     T1 --> T2["Rate hydration - restorative - nourishing"]
     T2 --> T3["Report issues - add notes"]
-    T4["Mark steps done"] --> T3
     CRP --> CIN
-
+    T3 --> T4["Mark steps done"]
+     RT:::Rose
+     n2:::Peach
+     n2:::Sky
+     n1:::Sky
      RRule:::note
+     T1:::Sky
     classDef note fill:#fff7e6,stroke:#ff9900,stroke-width:1px,stroke-dasharray:5 5
     classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
+    classDef Peach stroke-width:1px, stroke-dasharray:none, stroke:#FBB35A, fill:#FFEFDB, color:#8F632D
+    classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
+    classDef Rose stroke-width:1px, stroke-dasharray:none, stroke:#FF5978, fill:#FFDFE5, color:#8E2236
 ```
 
 ![alt text](<images/customer-flow.png>)
